@@ -1,0 +1,10 @@
+➜  kafka pbpaste filebeat.yml
+filebeat.inputs:
+  - type: log
+    paths:
+      - /logs/*.log
+    json.keys_under_root: true
+    json.add_error_key: true
+
+output.logstash:
+  hosts: ["logstash:5044"]
